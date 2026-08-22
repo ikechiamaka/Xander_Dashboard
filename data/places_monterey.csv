@@ -1,0 +1,81 @@
+year,locationname,locationid,category,measure,data_value,data_value_unit,data_value_type,low_confidence_limit,high_confidence_limit,totalpopulation
+2023,Monterey,06053,Health-Related Social Needs,Loneliness among adults,35.7,%,Age-adjusted prevalence,30.7,41.0,430723
+2023,Monterey,06053,Health Outcomes,Stroke among adults,3.4,%,Crude prevalence,3.0,3.8,430723
+2022,Monterey,06053,Prevention,Colorectal cancer screening among adults aged 45–75 years,53.3,%,Age-adjusted prevalence,48.6,57.9,430723
+2023,Monterey,06053,Disability,Hearing disability among adults,6.6,%,Crude prevalence,5.8,7.5,430723
+2023,Monterey,06053,Health Outcomes,High blood pressure among adults,32.0,%,Crude prevalence,28.6,35.7,430723
+2023,Monterey,06053,Health-Related Social Needs,Food insecurity in the past 12 months among adults,21.9,%,Crude prevalence,17.6,26.5,430723
+2022,Monterey,06053,Health Outcomes,All teeth lost among adults aged >=65 years,11.2,%,Age-adjusted prevalence,9.1,13.7,430723
+2023,Monterey,06053,Health Outcomes,Current asthma among adults,9.6,%,Crude prevalence,8.5,10.8,430723
+2023,Monterey,06053,Health-Related Social Needs,Housing insecurity in the past 12 months among adults,18.0,%,Crude prevalence,14.7,21.3,430723
+2022,Monterey,06053,Prevention,Visited dentist or dental clinic in the past year among adults,57.5,%,Age-adjusted prevalence,54.1,61.2,430723
+2023,Monterey,06053,Health Outcomes,Arthritis among adults,21.2,%,Crude prevalence,18.7,23.8,430723
+2023,Monterey,06053,Disability,Any disability among adults,32.1,%,Crude prevalence,27.7,37.1,430723
+2023,Monterey,06053,Health Status,Frequent mental distress among adults,17.1,%,Age-adjusted prevalence,14.9,19.4,430723
+2023,Monterey,06053,Prevention,Visits to doctor for routine checkup within the past year among adults,71.6,%,Crude prevalence,67.7,75.4,430723
+2023,Monterey,06053,Disability,Independent living disability among adults,9.0,%,Age-adjusted prevalence,7.6,10.4,430723
+2023,Monterey,06053,Prevention,Taking medicine to control high blood pressure among adults with high blood pressure,51.5,%,Age-adjusted prevalence,47.3,55.9,430723
+2023,Monterey,06053,Health-Related Social Needs,Received food stamps in the past 12 months among adults,19.4,%,Age-adjusted prevalence,15.3,23.6,430723
+2023,Monterey,06053,Prevention,Cholesterol screening among adults,83.0,%,Age-adjusted prevalence,80.4,85.4,430723
+2023,Monterey,06053,Disability,Self-care disability among adults,4.4,%,Age-adjusted prevalence,3.8,5.2,430723
+2023,Monterey,06053,Health Risk Behaviors,Binge drinking among adults,17.1,%,Age-adjusted prevalence,14.2,20.3,430723
+2023,Monterey,06053,Health-Related Social Needs,Lack of social and emotional support among adults,28.1,%,Age-adjusted prevalence,24.0,32.6,430723
+2022,Monterey,06053,Prevention,Mammography use among women aged 50-74 years,72.6,%,Crude prevalence,64.6,79.5,430723
+2023,Monterey,06053,Health Risk Behaviors,Current cigarette smoking among adults,11.9,%,Crude prevalence,9.8,14.3,430723
+2022,Monterey,06053,Health Risk Behaviors,Short sleep duration among adults,34.4,%,Age-adjusted prevalence,29.1,40.1,430723
+2023,Monterey,06053,Health-Related Social Needs,Loneliness among adults,35.4,%,Crude prevalence,30.5,40.8,430723
+2022,Monterey,06053,Prevention,Colorectal cancer screening among adults aged 45–75 years,57.7,%,Crude prevalence,53.0,62.3,430723
+2022,Monterey,06053,Health Outcomes,All teeth lost among adults aged >=65 years,11.0,%,Crude prevalence,8.9,13.4,430723
+2023,Monterey,06053,Health Outcomes,Current asthma among adults,9.6,%,Age-adjusted prevalence,8.5,10.8,430723
+2023,Monterey,06053,Disability,Hearing disability among adults,6.1,%,Age-adjusted prevalence,5.4,6.9,430723
+2023,Monterey,06053,Prevention,Cholesterol screening among adults,83.6,%,Crude prevalence,81.0,85.9,430723
+2023,Monterey,06053,Disability,Independent living disability among adults,9.1,%,Crude prevalence,7.7,10.6,430723
+2023,Monterey,06053,Health Status,Frequent physical distress among adults,14.7,%,Crude prevalence,12.8,16.9,430723
+2023,Monterey,06053,Disability,Mobility disability among adults,15.5,%,Crude prevalence,13.1,18.1,430723
+2023,Monterey,06053,Health-Related Social Needs,Utility services shut-off threat in the past 12 months among adults,8.9,%,Crude prevalence,7.4,10.5,430723
+2023,Monterey,06053,Health Outcomes,Depression among adults,19.2,%,Crude prevalence,16.4,22.3,430723
+2023,Monterey,06053,Health-Related Social Needs,Received food stamps in the past 12 months among adults,18.8,%,Crude prevalence,15.0,22.7,430723
+2023,Monterey,06053,Disability,Cognitive disability among adults,16.8,%,Age-adjusted prevalence,14.3,19.6,430723
+2023,Monterey,06053,Health Outcomes,Cancer (non-skin) or melanoma among adults,6.3,%,Crude prevalence,5.7,7.1,430723
+2023,Monterey,06053,Disability,Vision disability among adults,6.8,%,Age-adjusted prevalence,5.8,7.9,430723
+2023,Monterey,06053,Health Status,Fair or poor self-rated health status among adults,25.8,%,Crude prevalence,22.0,29.9,430723
+2023,Monterey,06053,Health-Related Social Needs,Lack of reliable transportation in the past 12 months among adults,11.5,%,Age-adjusted prevalence,9.5,13.5,430723
+2023,Monterey,06053,Prevention,Taking medicine to control high blood pressure among adults with high blood pressure,70.5,%,Crude prevalence,67.2,73.6,430723
+2022,Monterey,06053,Prevention,Mammography use among women aged 50-74 years,72.0,%,Age-adjusted prevalence,64.0,79.2,430723
+2023,Monterey,06053,Prevention,Visits to doctor for routine checkup within the past year among adults,70.5,%,Age-adjusted prevalence,66.4,74.5,430723
+2023,Monterey,06053,Health-Related Social Needs,Housing insecurity in the past 12 months among adults,19.0,%,Age-adjusted prevalence,15.5,22.5,430723
+2023,Monterey,06053,Health Risk Behaviors,Current cigarette smoking among adults,12.1,%,Age-adjusted prevalence,10.0,14.6,430723
+2023,Monterey,06053,Disability,Mobility disability among adults,14.5,%,Age-adjusted prevalence,12.2,16.9,430723
+2023,Monterey,06053,Health-Related Social Needs,Utility services shut-off threat in the past 12 months among adults,9.4,%,Age-adjusted prevalence,7.8,11.2,430723
+2023,Monterey,06053,Health Status,Fair or poor self-rated health status among adults,25.4,%,Age-adjusted prevalence,21.5,29.7,430723
+2023,Monterey,06053,Health Outcomes,Depression among adults,19.4,%,Age-adjusted prevalence,16.6,22.5,430723
+2023,Monterey,06053,Health-Related Social Needs,Lack of social and emotional support among adults,27.8,%,Crude prevalence,23.8,32.2,430723
+2023,Monterey,06053,Health Outcomes,Chronic obstructive pulmonary disease among adults,5.7,%,Crude prevalence,4.8,6.8,430723
+2023,Monterey,06053,Health Outcomes,Coronary heart disease among adults,6.2,%,Crude prevalence,5.4,7.0,430723
+2023,Monterey,06053,Health Status,Frequent physical distress among adults,14.4,%,Age-adjusted prevalence,12.4,16.6,430723
+2023,Monterey,06053,Health Outcomes,High cholesterol among adults who have ever been screened,35.2,%,Crude prevalence,31.4,39.1,430723
+2023,Monterey,06053,Health Risk Behaviors,Binge drinking among adults,16.4,%,Crude prevalence,13.6,19.4,430723
+2023,Monterey,06053,Health Risk Behaviors,No leisure-time physical activity among adults,27.0,%,Crude prevalence,22.7,32.0,430723
+2022,Monterey,06053,Prevention,Visited dentist or dental clinic in the past year among adults,57.8,%,Crude prevalence,54.3,61.5,430723
+2023,Monterey,06053,Disability,Self-care disability among adults,4.6,%,Crude prevalence,4.0,5.4,430723
+2023,Monterey,06053,Health Outcomes,High blood pressure among adults,30.3,%,Age-adjusted prevalence,26.9,34.0,430723
+2023,Monterey,06053,Prevention,Current lack of health insurance among adults aged 18-64 years,16.2,%,Age-adjusted prevalence,12.3,20.5,430723
+2023,Monterey,06053,Prevention,Current lack of health insurance among adults aged 18-64 years,15.9,%,Crude prevalence,12.1,20.1,430723
+2023,Monterey,06053,Disability,Any disability among adults,31.3,%,Age-adjusted prevalence,26.8,36.2,430723
+2023,Monterey,06053,Health Status,Frequent mental distress among adults,16.7,%,Crude prevalence,14.6,19.0,430723
+2023,Monterey,06053,Health Outcomes,Diagnosed diabetes among adults,12.5,%,Crude prevalence,10.9,14.4,430723
+2023,Monterey,06053,Health Outcomes,Obesity among adults,31.4,%,Age-adjusted prevalence,25.7,38.0,430723
+2023,Monterey,06053,Health Outcomes,Stroke among adults,3.1,%,Age-adjusted prevalence,2.8,3.5,430723
+2023,Monterey,06053,Disability,Vision disability among adults,7.0,%,Crude prevalence,6.0,8.1,430723
+2023,Monterey,06053,Health Outcomes,Cancer (non-skin) or melanoma among adults,5.7,%,Age-adjusted prevalence,5.1,6.3,430723
+2023,Monterey,06053,Health Outcomes,Diagnosed diabetes among adults,11.6,%,Age-adjusted prevalence,10.1,13.4,430723
+2023,Monterey,06053,Health-Related Social Needs,Food insecurity in the past 12 months among adults,22.6,%,Age-adjusted prevalence,17.9,27.3,430723
+2023,Monterey,06053,Health Outcomes,Obesity among adults,31.1,%,Crude prevalence,25.3,37.6,430723
+2023,Monterey,06053,Disability,Cognitive disability among adults,16.6,%,Crude prevalence,14.1,19.3,430723
+2023,Monterey,06053,Health Outcomes,Coronary heart disease among adults,5.6,%,Age-adjusted prevalence,4.9,6.3,430723
+2022,Monterey,06053,Health Risk Behaviors,Short sleep duration among adults,33.9,%,Crude prevalence,28.6,39.5,430723
+2023,Monterey,06053,Health-Related Social Needs,Lack of reliable transportation in the past 12 months among adults,11.2,%,Crude prevalence,9.3,13.2,430723
+2023,Monterey,06053,Health Risk Behaviors,No leisure-time physical activity among adults,26.7,%,Age-adjusted prevalence,22.4,31.7,430723
+2023,Monterey,06053,Health Outcomes,Chronic obstructive pulmonary disease among adults,5.3,%,Age-adjusted prevalence,4.4,6.2,430723
+2023,Monterey,06053,Health Outcomes,Arthritis among adults,19.5,%,Age-adjusted prevalence,17.2,22.1,430723
+2023,Monterey,06053,Health Outcomes,High cholesterol among adults who have ever been screened,31.9,%,Age-adjusted prevalence,28.2,35.8,430723
