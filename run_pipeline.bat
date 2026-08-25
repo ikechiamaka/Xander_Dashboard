@@ -1,3 +1,8 @@
 @echo off
-cd /d C:\Users\xmans\PycharmProjects\Capstone01
-"C:\Users\xmans\AppData\Local\Programs\Python\Python313\python.exe" run_pipeline.py
+setlocal
+cd /d "%~dp0"
+if not exist ".venv\Scripts\python.exe" (
+  echo Create the environment first: python -m venv .venv
+  exit /b 1
+)
+".venv\Scripts\python.exe" run_pipeline.py

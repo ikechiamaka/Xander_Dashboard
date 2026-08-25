@@ -53,6 +53,9 @@ sources = sorted(measures["source"].dropna().unique())
 
 with st.sidebar:
     st.header("Filters")
+    if st.button("Refresh database", use_container_width=True):
+        load_table.clear()
+        st.rerun()
     source_choice = st.selectbox("Source", ["All sources"] + sources)
     if source_choice == "All sources":
         filtered = measures.copy()

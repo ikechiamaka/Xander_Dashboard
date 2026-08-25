@@ -13,6 +13,15 @@ import traceback
 from scrape_cdph_all import scrape_cdph_chart, DATA_SOURCES
 import requests
 import os
+from pathlib import Path
+
+HTTP_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+}
+
+ROOT = Path(__file__).resolve().parent
+os.chdir(ROOT)
 
 # --- load scripts ---
 from load_cdph import load_cdph_csv
@@ -24,7 +33,7 @@ def fetch_places():
     print("\n--- Fetching CDC PLACES ---")
     url = "https://chronicdata.cdc.gov/resource/swc5-untb.json"
     params = {"locationname": "Monterey", "$limit": 1000}
-    response = requests.get(url, params=params)
+    response = requests.get(url, params=params, headers=HTTP_HEADERS, timeout=60)
     response.raise_for_status()
 
     import csv
@@ -46,7 +55,7 @@ def fetch_hcai():
     """HCAI ED data - direct CSV download, no scraping needed."""
     print("\n--- Fetching HCAI ---")
     url = "https://data.chhs.ca.gov/dataset/b91d0f25-d2b1-4c9f-b22d-13be3a6c5c90/resource/be06665a-7695-4a0b-af07-f0556d7e6707/download/disposition_ed_2024masked.csv"
-    response = requests.get(url)
+    response = requests.get(url, headers=HTTP_HEADERS, timeout=120)
     response.raise_for_status()
     with open("data/hcai_ed_by_county.csv", "wb") as f:
         f.write(response.content)

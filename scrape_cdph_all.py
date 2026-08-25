@@ -1,7 +1,8 @@
 from playwright.sync_api import sync_playwright
 import os
+from pathlib import Path
 
-DATA_DIR = "data"
+DATA_DIR = str(Path(__file__).resolve().parent / "data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
 # all four values confirmed by inspecting the actual radio buttons on the page
@@ -18,18 +19,15 @@ def scrape_cdph_chart(source_key, output_filename):
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        page.goto("https://skylab.cdph.ca.gov/ODdash/?tab=CTY")
-        page.wait_for_timeout(3000)
+        page = browser.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130 Safari/537.36")
+        page.goto("https://skylab.cdph.ca.gov/ODdash/?tab=CTY", wait_until="domcontentloaded", timeout=90000)
+        page.wait_for_timeout(5000)
 
         # select Monterey
-        page.evaluate("""
-            () => {
-                const el = $('#county2')[0].selectize;
-                el.setValue('Monterey');
-            }
-        """)
-        page.wait_for_timeout(4000)
+        county_search = page.locator("#county2 + div input")
+        county_search.fill("Monterey")
+        page.locator(".selectize-dropdown .option", has_text="Monterey").click(timeout=30000)
+        page.wait_for_timeout(5000)
 
         # find the download link and trace up to its tab panel (opens the panel,
         # which also makes the data-source radio buttons inside it clickable)
@@ -47,6 +45,7 @@ def scrape_cdph_chart(source_key, output_filename):
         page.check(f'input[name="CTY-src_h"][value="{radio_value}"]')
         page.wait_for_timeout(2500)  # let Shiny regenerate the chart + download link for this source
 
+        page.locator("#CTY-dlTime:not(.disabled)").wait_for(state="attached", timeout=60000)
         with page.expect_download(timeout=60000) as download_info:
             page.click("#CTY-dlTime")
         download = download_info.value

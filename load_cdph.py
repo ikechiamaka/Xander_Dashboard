@@ -1,8 +1,10 @@
 import sqlite3
 import csv
 import re
+from pathlib import Path
 
-DB_PATH = "data/capstone.db"
+ROOT = Path(__file__).resolve().parent
+DB_PATH = ROOT / "data" / "capstone.db"
 
 
 def load_cdph_csv(filepath, measure_name):
