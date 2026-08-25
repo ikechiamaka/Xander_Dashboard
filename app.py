@@ -12,6 +12,18 @@ DB_PATH = ROOT / "data" / "capstone.db"
 
 st.set_page_config(page_title="Monterey Public Data", page_icon="📊", layout="wide")
 
+st.markdown(
+    """
+    <style>
+    [data-testid="stSidebar"] { min-width: 235px; max-width: 270px; }
+    [data-testid="stSidebar"] section { padding: 1.5rem 1rem; }
+    [data-testid="stSidebar"] h2 { font-size: 1.25rem; margin-bottom: 1.25rem; }
+    [data-testid="stSidebar"] [data-testid="stWidgetLabel"] p { font-size: .85rem; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 
 @st.cache_data
 def load_table(table: str) -> pd.DataFrame:
@@ -41,12 +53,16 @@ sources = sorted(measures["source"].dropna().unique())
 
 with st.sidebar:
     st.header("Filters")
-    selected_sources = st.multiselect("Source", sources, default=sources)
-    filtered = measures[measures["source"].isin(selected_sources)]
+    source_choice = st.selectbox("Source", ["All sources"] + sources)
+    if source_choice == "All sources":
+        filtered = measures.copy()
+    else:
+        filtered = measures[measures["source"] == source_choice]
     measure_names = sorted(filtered["measure"].dropna().unique())
-    selected_measures = st.multiselect("Measure", measure_names, default=measure_names[:8])
+    measure_choice = st.selectbox("Measure", ["All measures"] + measure_names)
 
-filtered = filtered[filtered["measure"].isin(selected_measures)]
+if measure_choice != "All measures":
+    filtered = filtered[filtered["measure"] == measure_choice]
 
 tab_overview, tab_trends, tab_cdc, tab_data = st.tabs(
     ["Overview", "Trends", "CDC PLACES", "Data"]
@@ -105,4 +121,3 @@ with tab_data:
     st.subheader("Database records")
     st.write(f"Database: `{DB_PATH}`")
     st.dataframe(filtered, use_container_width=True, hide_index=True)
-
