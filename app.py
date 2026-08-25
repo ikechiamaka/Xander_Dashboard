@@ -9,6 +9,7 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parent
 DB_PATH = ROOT / "data" / "capstone.db"
+DISPLAY_DB_PATH = "data/capstone.db"
 
 st.set_page_config(page_title="Monterey Public Data", page_icon="📊", layout="wide")
 
@@ -44,7 +45,7 @@ measures = load_table("county_measures")
 incidents = load_table("incidents")
 
 if measures.empty:
-    st.error(f"No county measures found at {DB_PATH}.")
+    st.error(f"No county measures found in {DISPLAY_DB_PATH}.")
     st.stop()
 
 measures["numeric_value"] = numeric_values(measures)
@@ -122,5 +123,5 @@ with tab_cdc:
 
 with tab_data:
     st.subheader("Database records")
-    st.write(f"Database: `{DB_PATH}`")
+    st.write(f"Database: `{DISPLAY_DB_PATH}`")
     st.dataframe(filtered, use_container_width=True, hide_index=True)
