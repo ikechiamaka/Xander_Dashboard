@@ -19,6 +19,8 @@ HTTP_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
+if os.getenv("CDC_APP_TOKEN"):
+    HTTP_HEADERS["X-App-Token"] = os.environ["CDC_APP_TOKEN"]
 
 ROOT = Path(__file__).resolve().parent
 os.chdir(ROOT)
@@ -54,7 +56,10 @@ def fetch_places():
 def fetch_hcai():
     """HCAI ED data - direct CSV download, no scraping needed."""
     print("\n--- Fetching HCAI ---")
-    url = "https://data.chhs.ca.gov/dataset/b91d0f25-d2b1-4c9f-b22d-13be3a6c5c90/resource/be06665a-7695-4a0b-af07-f0556d7e6707/download/disposition_ed_2024masked.csv"
+    url = os.getenv(
+        "HCAI_DOWNLOAD_URL",
+        "https://data.chhs.ca.gov/dataset/b91d0f25-d2b1-4c9f-b22d-13be3a6c5c90/resource/be06665a-7695-4a0b-af07-f0556d7e6707/download/disposition_ed_2024masked.csv",
+    )
     response = requests.get(url, headers=HTTP_HEADERS, timeout=120)
     response.raise_for_status()
     with open("data/hcai_ed_by_county.csv", "wb") as f:

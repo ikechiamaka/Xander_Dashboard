@@ -12,6 +12,13 @@ streamlit run app.py
 
 The dashboard reads `data/capstone.db` and opens at `http://localhost:8501`.
 
+## Upstream access
+
+CDC PLACES may require a Socrata app token. Set `CDC_APP_TOKEN` as a Windows
+environment variable before running the pipeline. A replacement HCAI download
+location can be supplied with `HCAI_DOWNLOAD_URL`. Never commit real tokens;
+`.env.example` only documents the variable names.
+
 ## Refresh the data
 
 Run `run_pipeline.bat` from Windows Task Scheduler once per day. Or, from an
