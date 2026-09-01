@@ -100,15 +100,17 @@ with tab_trends:
     else:
         units = sorted(trend["unit"].fillna("Unspecified").unique())
         selected_unit = st.selectbox("Display comparable values", units)
+        chart_type = st.radio("Chart type", ["Line", "Bars"], horizontal=True)
         trend = trend[trend["unit"].fillna("Unspecified") == selected_unit].copy()
         trend["period"] = trend["year_label"]
         charts = []
         for measure_name in sorted(trend["measure"].unique()):
             measure_data = trend[trend["measure"] == measure_name]
             upper_bound = float(measure_data["numeric_value"].max()) * 1.1
+            mark = alt.MarkDef(type="line", point=True) if chart_type == "Line" else alt.MarkDef(type="bar", color="#e85d62")
             chart = (
                 alt.Chart(measure_data)
-                .mark_bar(color="#e85d62")
+                .mark(mark)
                 .encode(
                     x=alt.X("period:N", sort=None, title="Period", axis=alt.Axis(labelAngle=-45)),
                     y=alt.Y(
@@ -123,7 +125,8 @@ with tab_trends:
             charts.append(chart)
         st.altair_chart(alt.vconcat(*charts).resolve_scale(y="independent"), use_container_width=True)
         st.caption(
-            "Measures are separated by unit, and each panel scales to 110% of its own largest value."
+            "Line view emphasizes change over time; bars compare individual periods. "
+            "Each panel scales to 110% of its own largest value."
         )
 
 with tab_cdc:
