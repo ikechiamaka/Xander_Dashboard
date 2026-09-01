@@ -5,6 +5,7 @@ import sqlite3
 
 import pandas as pd
 import streamlit as st
+import altair as alt
 
 
 ROOT = Path(__file__).resolve().parent
@@ -97,12 +98,33 @@ with tab_trends:
     if trend.empty:
         st.info("Choose at least one measure with numeric values.")
     else:
+        units = sorted(trend["unit"].fillna("Unspecified").unique())
+        selected_unit = st.selectbox("Display comparable values", units)
+        trend = trend[trend["unit"].fillna("Unspecified") == selected_unit].copy()
         trend["period"] = trend["year_label"]
-        chart_data = trend.pivot_table(
-            index="period", columns="measure", values="numeric_value", aggfunc="mean"
-        ).sort_index()
-        st.line_chart(chart_data)
-        st.caption("Values are shown as published; rates and counts are not combined.")
+        charts = []
+        for measure_name in sorted(trend["measure"].unique()):
+            measure_data = trend[trend["measure"] == measure_name]
+            upper_bound = float(measure_data["numeric_value"].max()) * 1.1
+            chart = (
+                alt.Chart(measure_data)
+                .mark_bar(color="#e85d62")
+                .encode(
+                    x=alt.X("period:N", sort=None, title="Period", axis=alt.Axis(labelAngle=-45)),
+                    y=alt.Y(
+                        "numeric_value:Q",
+                        title=f"Value ({selected_unit})",
+                        scale=alt.Scale(domain=[0, upper_bound]),
+                    ),
+                    tooltip=["period:N", "measure:N", "numeric_value:Q", "unit:N"],
+                )
+                .properties(title=measure_name, height=230)
+            )
+            charts.append(chart)
+        st.altair_chart(alt.vconcat(*charts).resolve_scale(y="independent"), use_container_width=True)
+        st.caption(
+            "Measures are separated by unit, and each panel scales to 110% of its own largest value."
+        )
 
 with tab_cdc:
     st.subheader("CDC PLACES measures")
