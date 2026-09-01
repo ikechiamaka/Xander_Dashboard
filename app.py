@@ -107,21 +107,20 @@ with tab_trends:
         for measure_name in sorted(trend["measure"].unique()):
             measure_data = trend[trend["measure"] == measure_name]
             upper_bound = float(measure_data["numeric_value"].max()) * 1.1
-            mark = alt.MarkDef(type="line", point=True) if chart_type == "Line" else alt.MarkDef(type="bar", color="#e85d62")
-            chart = (
-                alt.Chart(measure_data)
-                .mark(mark)
-                .encode(
-                    x=alt.X("period:N", sort=None, title="Period", axis=alt.Axis(labelAngle=-45)),
-                    y=alt.Y(
-                        "numeric_value:Q",
-                        title=f"Value ({selected_unit})",
-                        scale=alt.Scale(domain=[0, upper_bound]),
-                    ),
-                    tooltip=["period:N", "measure:N", "numeric_value:Q", "unit:N"],
-                )
-                .properties(title=measure_name, height=230)
-            )
+            chart = alt.Chart(measure_data)
+            if chart_type == "Line":
+                chart = chart.mark_line(point=True)
+            else:
+                chart = chart.mark_bar(color="#e85d62")
+            chart = chart.encode(
+                x=alt.X("period:N", sort=None, title="Period", axis=alt.Axis(labelAngle=-45)),
+                y=alt.Y(
+                    "numeric_value:Q",
+                    title=f"Value ({selected_unit})",
+                    scale=alt.Scale(domain=[0, upper_bound]),
+                ),
+                tooltip=["period:N", "measure:N", "numeric_value:Q", "unit:N"],
+            ).properties(title=measure_name, height=230)
             charts.append(chart)
         st.altair_chart(alt.vconcat(*charts).resolve_scale(y="independent"), use_container_width=True)
         st.caption(
