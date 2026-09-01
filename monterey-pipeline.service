@@ -1,0 +1,11 @@
+[Unit]
+Description=Refresh Monterey public data
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=dashboard
+WorkingDirectory=/opt/monterey-capstone-dashboard
+EnvironmentFile=-/etc/monterey-dashboard/pipeline.env
+ExecStart=/opt/monterey-capstone-dashboard/.venv/bin/python run_pipeline.py

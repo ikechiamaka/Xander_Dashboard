@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Monterey public data refresh
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+Persistent=true
+Unit=monterey-pipeline.service
+
+[Install]
+WantedBy=timers.target

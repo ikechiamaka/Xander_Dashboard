@@ -23,6 +23,7 @@ location can be supplied with `HCAI_DOWNLOAD_URL`. Never commit real tokens;
 
 Run `run_pipeline.bat` from Windows Task Scheduler once per day. Or, from an
 elevated PowerShell window in this directory, run `.\schedule_pipeline.ps1`.
+The deployed server uses a systemd timer to run the pipeline daily at 02:00 UTC.
 The pipeline
 fetches CDC PLACES and HCAI data, downloads the four CDPH trend exports, and
 loads them into the SQLite database. It is safe to run repeatedly.
