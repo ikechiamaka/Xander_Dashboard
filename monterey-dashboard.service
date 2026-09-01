@@ -1,0 +1,16 @@
+[Unit]
+Description=Monterey Public Data Dashboard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dashboard
+WorkingDirectory=/opt/monterey-capstone-dashboard
+ExecStart=/opt/monterey-capstone-dashboard/.venv/bin/python -m streamlit run app.py --server.address 0.0.0.0 --server.port 8501 --server.headless true
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
